@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta name="description" content="You're invited to P. Lashwin's 1st Birthday on 02 December 2026 — Parthiban Families"/>
+  <title>👑 P. Lashwin · 1st Birthday · 02 Dec 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700;800;900&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- GLOBAL BACKGROUND — realistic balloons + stars + cakes rising -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-brand">
+      <span class="nav-crown">👑</span>
+      <span class="nav-title">P. Lashwin</span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#hero"       class="nl">Home</a>
+      <a href="#countdown"  class="nl">Countdown</a>
+      <a href="#invitation" class="nl">Invite</a>
+      <a href="#stories"    class="nl">Stories</a>
+      <a href="#family"     class="nl">Family</a>
+      <a href="#wishes"     class="nl">Wishes</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="scroll-tracker" id="scrollTracker"><div class="scroll-progress" id="scrollProgress"><span class="scroll-balloon-marker">🎈</span></div></div>
+  <div class="mob-nav" id="mobNav">
+    <a href="#hero"       onclick="closeMob()">🏠 Home</a>
+    <a href="#countdown"  onclick="closeMob()">⏳ Countdown</a>
+    <a href="#invitation" onclick="closeMob()">💌 Invitation</a>
+    <a href="#stories"    onclick="closeMob()">📖 Stories</a>
+    <a href="#family"     onclick="closeMob()">👨‍👩‍👦 Family</a>
+    <a href="#wishes"     onclick="closeMob()">💝 Wishes</a>
+  </div>
+
+  <!-- ══════════════════════════════════
+       HERO
+  ══════════════════════════════════ -->
+  <section id="hero" class="hero">
+    <div class="hero-wrap">
+
+      <!-- LEFT TEXT -->
+      <div class="hero-left">
+        <div class="hero-pill rev" data-d="0">🎉 You're Invited!</div>
+        <h1 class="hero-h1">
+          <span class="h1a rev" data-d="100">Happy</span>
+          <span class="h1b rev" data-d="200">1<sup>st</sup></span>
+          <span class="h1c dancing rev" data-d="300">Birthday</span>
+        </h1>
+        <div class="hero-name-block rev" data-d="400">
+          <span class="hn-to">to our little prince</span>
+          <span class="hn-name dancing">P. Lashwin</span>
+          <div class="hn-stars">
+            <span style="--d:0s">⭐</span><span style="--d:.15s">✨</span>
+            <span style="--d:.3s">⭐</span><span style="--d:.45s">✨</span><span style="--d:.6s">⭐</span>
+          </div>
+        </div>
+        <div class="hero-date rev" data-d="500">
+          <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Wednesday · 02 December 2026
+        </div>
+        <div class="hero-btns rev" data-d="600">
+          <a href="#invitation" class="btn btn-blue">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            View Invitation
+          </a>
+          <a href="#stories" class="btn btn-glass">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+            Monthly Stories
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT PHOTO — floating cutout -->
+      <div class="hero-right rev" data-d="200">
+        <div class="hero-photo-scene">
+          <!-- Glow rings -->
+          <div class="glow-ring gr1"></div>
+          <div class="glow-ring gr2"></div>
+          <div class="glow-ring gr3"></div>
+          <!-- Orbiting deco -->
+          <div class="orb o1">🎈</div>
+          <div class="orb o2">👑</div>
+          <div class="orb o3">🎀</div>
+          <div class="orb o4">⭐</div>
+          <!-- Photo frame -->
+          <div class="photo-bubble" id="heroBubble">
+            <div class="pb-shine"></div>
+            <img src="images/hero_standing.jpg" alt="P. Lashwin Standing" class="pb-img" id="heroImg"/>
+            <div class="pb-bottom-glow"></div>
+          </div>
+          <!-- Age badge -->
+          <div class="age-badge">
+            <span class="ab-1">1</span><span class="ab-st">st</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="scroll-cue" id="scrollCue">
+      <div class="sc-ball"></div>
+      <svg viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg>
+      <span>Scroll down</span>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       COUNTDOWN
+  ══════════════════════════════════ -->
+  <section id="countdown" class="countdown-sec">
+    <div class="sec-head rev-blk" data-reveal="down">
+      <div class="sec-label">⏳ The Big Day Approaches</div>
+      <h2 class="sec-title dancing">Counting Every Second</h2>
+      <p class="sec-sub">Until <strong>P. Lashwin's</strong> 1st Birthday!</p>
+    </div>
+    <div class="cd-row rev-blk" data-reveal="up">
+      <div class="cd-box"><div class="cdb-num" id="cdD">00</div><div class="cdb-lbl">Days</div><div class="cdb-glow"></div></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-box"><div class="cdb-num" id="cdH">00</div><div class="cdb-lbl">Hours</div><div class="cdb-glow"></div></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-box"><div class="cdb-num" id="cdM">00</div><div class="cdb-lbl">Mins</div><div class="cdb-glow"></div></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-box"><div class="cdb-num" id="cdS">00</div><div class="cdb-lbl">Secs</div><div class="cdb-glow"></div></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       INVITATION CARD
+  ══════════════════════════════════ -->
+  <section id="invitation" class="inv-sec">
+    <div class="inv-deco dl">🎈</div>
+    <div class="inv-deco dr">🎈</div>
+    <div class="sec-head rev-blk" data-reveal="down">
+      <div class="sec-label">💌 Formal Invitation</div>
+      <h2 class="sec-title dancing">You Are Invited!</h2>
+    </div>
+    <div class="inv-card rev-blk" data-reveal="scale">
+      <div class="inv-top">
+        <div class="inv-crown">👑</div>
+        <p class="inv-greet dancing">Dear Friends &amp; Family,</p>
+        <p class="inv-desc">With hearts full of joy &amp; blessings, we request the pleasure of your presence at the</p>
+        <div class="inv-num">
+          <span class="in-1">1</span><span class="in-st">st</span>
+          <span class="in-word dancing">Birthday</span>
+        </div>
+        <p class="inv-of">Celebration of our beloved little prince</p>
+        <div class="inv-banner"><span class="dancing">P. Lashwin</span></div>
+      </div>
+      <div class="inv-grid">
+        <div class="inv-det">
+          <div class="inv-ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+          <div><div class="id-lbl">Date</div><div class="id-val">Wednesday, 02 December 2026</div></div>
+        </div>
+        <div class="inv-det">
+          <div class="inv-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg></div>
+          <div><div class="id-lbl">Occasion</div><div class="id-val">1st Birthday Grand Celebration</div></div>
+        </div>
+        <div class="inv-det">
+          <div class="inv-ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div><div class="id-lbl">Hosted By</div><div class="id-val">Parthiban Families</div></div>
+        </div>
+        <div class="inv-det">
+          <div class="inv-ico"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+          <div><div class="id-lbl">With Love</div><div class="id-val">P. Prakash &amp; P. Hemalatha</div></div>
+        </div>
+        <div class="inv-det" style="grid-column:1/-1;">
+          <div class="inv-ico" style="background:linear-gradient(135deg,var(--gold),var(--gold2));"><svg viewBox="0 0 24 24" style="stroke:#000;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+          <div><div class="id-lbl">Celebration Venue</div><div class="id-val">4, Pillaiyar Koil Street, Chinna Sengundram, Sengundram, SP Koil - 603204 · <a href="https://maps.app.goo.gl/zotAdqTmFEQFh59Q7" target="_blank" rel="noopener noreferrer" style="color:var(--gold2);font-weight:700;text-decoration:underline;">View Map 📍</a></div></div>
+        </div>
+      </div>
+      <div class="inv-quote">"May you grow up healthy, happy and blessed always, our little prince Lashwin. Every smile of yours fills our world with sunshine!"</div>
+      <div class="inv-foot">
+        <span class="dancing inv-parents">P. Prakash &amp; P. Hemalatha</span>
+        <span class="inv-seal">Parthiban Families</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       STORIES — Month-by-Month Journey
+  ══════════════════════════════════ -->
+  <section id="stories" class="moments-sec">
+    <div class="sec-head rev-blk" data-reveal="down">
+      <div class="sec-label">📖 12 Months Journey</div>
+      <h2 class="sec-title dancing">Lashwin's Monthly Stories</h2>
+      <p class="sec-sub">From his very first breath to taking his first steps into his 1st Birthday! ✨</p>
+    </div>
+
+    <!-- Story 1: Sweet Eyes in the Orange Hood -->
+    <div class="moment-row mr-left" data-index="0">
+      <div class="mr-photo">
+        <div class="mrp-wrap">
+          <div class="mrp-glow"></div>
+          <img src="images/story1_orange_hood.jpg" alt="Lashwin in Orange Hood" class="mrp-img" style="object-position:center center"/>
+          <div class="mrp-bottom"></div>
+        </div>
+        <div class="mrp-stars">🧡 ✨ 👑</div>
+      </div>
+      <div class="mr-text">
+        <div class="mrt-num">01</div>
+        <div class="mrt-month-badge">Story 01 · Pure Wonder</div>
+        <h3 class="mrt-title dancing">Sweet Eyes in the Orange Hood</h3>
+        <p class="mrt-desc">Look at those innocent sparkling eyes and that cute pointed orange hood! With his charming forehead tilak and gentle gaze, our little prince Lashwin fills our entire home with warmth and infinite love!</p>
+        <div class="mrt-tags"><span>🧡 Orange Hood</span><span>✨ Sparkling Eyes</span><span>👑 Prince Lashwin</span></div>
+      </div>
+    </div>
+
+    <!-- Story 2: 3rd Month -->
+    <div class="moment-row mr-right" data-index="1">
+      <div class="mr-text">
+        <div class="mrt-num">02</div>
+        <div class="mrt-month-badge">Month 3 · First Giggles</div>
+        <h3 class="mrt-title dancing">Cute Hood &amp; Playful Giggles</h3>
+        <p class="mrt-desc">Sitting up proudly in your little red and black hood, holding your favorite toys and looking at us with bright sparkling eyes that could melt any heart!</p>
+        <div class="mrt-tags"><span>😊 Playful</span><span>🧣 Little Hood</span><span>✨ Wonder</span></div>
+      </div>
+      <div class="mr-photo">
+        <div class="mrp-wrap">
+          <div class="mrp-glow"></div>
+          <img src="images/month3_ruler_hood.jpg" alt="Lashwin 3rd Month" class="mrp-img" style="object-position:center 30%"/>
+          <div class="mrp-bottom"></div>
+        </div>
+        <div class="mrp-stars">⭐ ✨ 💫</div>
+      </div>
+    </div>
+
+    <!-- Story 3: 5th Month (Standing with Father) -->
+    <div class="moment-row mr-left" data-index="2">
+      <div class="mr-photo">
+        <div class="mrp-wrap highlight-wrap">
+          <div class="mrp-glow"></div>
+          <img src="images/month5_standing_father.jpg" alt="Lashwin Standing with Father on Beach" class="mrp-img" style="object-position:45% 45%"/>
+          <div class="mrp-bottom"></div>
+        </div>
+        <div class="mrp-stars">🌊 👣 💙</div>
+      </div>
+      <div class="mr-text">
+        <div class="mrt-num">03</div>
+        <div class="mrt-month-badge" style="background:linear-gradient(135deg,var(--b4),var(--gold));color:#fff;">Month 5 · Milestone Moments</div>
+        <h3 class="mrt-title dancing">Standing with Appa on the Beach</h3>
+        <p class="mrt-desc">A truly unforgettable memory! Supported by his loving father Prakash, baby Lashwin took his first standing steps on the golden beach sands, silver anklets chiming to the ocean breeze!</p>
+        <div class="mrt-tags"><span>🌊 Beach Steps</span><span>👨‍👦 Appa's Boy</span><span>👣 Standing Strong</span></div>
+      </div>
+    </div>
+
+    <!-- Story 4: 6th Month -->
+    <div class="moment-row mr-right" data-index="3">
+      <div class="mr-text">
+        <div class="mrt-num">04</div>
+        <div class="mrt-month-badge">Month 6 · Cool Explorer</div>
+        <h3 class="mrt-title dancing">Sun Hat &amp; Cool Aviators</h3>
+        <p class="mrt-desc">Looking like a little superstar! Dressed up with stylish blue aviators and a charming polka dot sun hat, spreading effortless smiles and laughter all around!</p>
+        <div class="mrt-tags"><span>🕶️ Cool Dude</span><span>👒 Sun Hat</span><span>🌟 Superstar</span></div>
+      </div>
+      <div class="mr-photo">
+        <div class="mrp-wrap">
+          <div class="mrp-glow"></div>
+          <img src="images/month6_cool_sunglasses.jpg" alt="Lashwin in Sunglasses" class="mrp-img" style="object-position:center 30%"/>
+          <div class="mrp-bottom"></div>
+        </div>
+        <div class="mrp-stars">🕶️ ☀️ 💛</div>
+      </div>
+    </div>
+
+    <!-- Story 5: 7th Month -->
+    <div class="moment-row mr-left" data-index="4">
+      <div class="mr-photo">
+        <div class="mrp-wrap">
+          <div class="mrp-glow"></div>
+          <img src="images/month7_temple_blessings.jpg" alt="Lashwin Sacred Blessings" class="mrp-img" style="object-position:center 22%"/>
+          <div class="mrp-bottom"></div>
+        </div>
+        <div class="mrp-stars">🙏 🕊️ ✨</div>
+      </div>
+      <div class="mr-text">
+        <div class="mrt-num">05</div>
+        <div class="mrt-month-badge">Month 7 · Divine Grace</div>
+        <h3 class="mrt-title dancing">Sacred Blessings &amp; Traditional Charm</h3>
+        <p class="mrt-desc">Adorned with sacred tilak, a shining silver pendant, and dressed in traditional style, our little prince received family blessings for longevity, happiness, and prosperity!</p>
+        <div class="mrt-tags"><span>🙏 Divine Grace</span><span>✨ Traditional Charm</span><span>💖 Blessed Prince</span></div>
+      </div>
+    </div>
+
+    <!-- Story 6: 9th Month -->
+    <div class="moment-row mr-right" data-index="5">
+      <div class="mr-text">
+        <div class="mrt-num">06</div>
+        <div class="mrt-month-badge">Month 9 · Sweet Dimples</div>
+        <h3 class="mrt-title dancing">Adorable Smile &amp; Pink Bow</h3>
+        <p class="mrt-desc">That pure, innocent laughter with rosy cheeks and sweet smile that brightens any room in an instant! Every expression of Lashwin is pure bliss.</p>
+        <div class="mrt-tags"><span>🎀 Cute Bow</span><span>😊 Sweet Smile</span><span>💖 Pure Joy</span></div>
+      </div>
+      <div class="mr-photo">
+        <div class="mrp-wrap">
+          <div class="mrp-glow"></div>
+          <img src="images/month9_pink_bow.jpg" alt="Lashwin Sweet Smile" class="mrp-img" style="object-position:center 25%"/>
+          <div class="mrp-bottom"></div>
+        </div>
+        <div class="mrp-stars">🎀 💕 🌸</div>
+      </div>
+    </div>
+
+    <!-- Story 7: 10th Month -->
+    <div class="moment-row mr-left" data-index="6">
+      <div class="mr-photo">
+        <div class="mrp-wrap">
+          <div class="mrp-glow"></div>
+          <img src="images/month10_bear_goggles.jpg" alt="Lashwin Bear Goggles" class="mrp-img" style="object-position:center 35%"/>
+          <div class="mrp-bottom"></div>
+        </div>
+        <div class="mrp-stars">🧸 🌟 💛</div>
+      </div>
+      <div class="mr-text">
+        <div class="mrt-num">07</div>
+        <div class="mrt-month-badge">Month 10 · Playful Mischief</div>
+        <h3 class="mrt-title dancing">Teddy Bear Glasses</h3>
+        <p class="mrt-desc">Full of cheeky charm! Posing with his adorable yellow bear spectacles and bright yellow shirt, turning every everyday moment into an absolute celebration!</p>
+        <div class="mrt-tags"><span>🧸 Bear Glasses</span><span>🎉 Fun &amp; Fun</span><span>👑 Charming</span></div>
+      </div>
+    </div>
+
+    <!-- Story 8: 11th Month -->
+    <div class="moment-row mr-right" data-index="7">
+      <div class="mr-text">
+        <div class="mrt-num">08</div>
+        <div class="mrt-month-badge">Month 11 · Birthday Countdown</div>
+        <h3 class="mrt-title dancing">Birthday Party Hat Ready!</h3>
+        <p class="mrt-desc">Almost turning ONE! Wearing his festive red party cone hat and beaming with pure excitement and laughter as his grand 1st Birthday celebration approaches!</p>
+        <div class="mrt-tags"><span>🎂 Party Hat</span><span>😄 Joyful Smile</span><span>⏳ Almost 1!</span></div>
+      </div>
+      <div class="mr-photo">
+        <div class="mrp-wrap">
+          <div class="mrp-glow"></div>
+          <img src="images/month11_birthday_hat.jpg?v=2" alt="Lashwin Party Hat" class="mrp-img" style="object-position:center top"/>
+          <div class="mrp-bottom"></div>
+        </div>
+        <div class="mrp-stars">🎉 🎂 🎈</div>
+      </div>
+    </div>
+
+    <!-- Story 9: 12th Month (1st Birthday Celebration) -->
+    <div class="moment-row mr-left" data-index="8">
+      <div class="mr-photo">
+        <div class="mrp-wrap highlight-wrap">
+          <div class="mrp-glow"></div>
+          <img src="images/story9_1st_birthday.jpg" alt="Lashwin 1st Birthday Cake Celebration" class="mrp-img" style="object-position:center center"/>
+          <div class="mrp-bottom"></div>
+        </div>
+        <div class="mrp-stars">👑 🎈 🎂</div>
+      </div>
+      <div class="mr-text">
+        <div class="mrt-num">09</div>
+        <div class="mrt-month-badge" style="background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;font-weight:800;">Month 12 · 1st Birthday!</div>
+        <h3 class="mrt-title dancing">Little Prince's 1st Birthday Celebration</h3>
+        <p class="mrt-desc">Our handsome little prince turning ONE! Dressed in his royal blue suspenders and sharp bow tie, beaming with pure joy beside his illuminated 1st birthday cake and golden balloons, ready to celebrate this magical milestone!</p>
+        <div class="mrt-tags"><span>👑 Prince Lashwin</span><span>🎂 1st Birthday Cake</span><span>💙 Turning 1</span></div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════════════
+       FAMILY SECTION
+  ══════════════════════════════════ -->
+  <section id="family" class="family-sec">
+    <div class="sec-head rev-blk" data-reveal="down">
+      <div class="sec-label">👨‍👩‍👦 With Love</div>
+      <h2 class="sec-title dancing">Parthiban Family</h2>
+      <p class="sec-sub">Blessed with our little prince Lashwin</p>
+    </div>
+    <div class="family-row">
+      <!-- Family photo showcase — Beach portrait -->
+      <div class="fam-photo rev-blk" data-reveal="left">
+        <div class="fam-frame">
+          <img src="images/family_beach.jpg?v=clean" alt="Parthiban Family at Beach" class="fam-img" style="object-position:center 22%"/>
+          <div class="fam-frame-glow"></div>
+          <div class="fam-badge-tag">🌊 Parthiban Family · Beach Days</div>
+        </div>
+        <div class="fam-label dancing">Parthiban Families</div>
+      </div>
+      <!-- Family info with professional premium icons -->
+      <div class="fam-info rev-blk" data-reveal="right">
+        <div class="fam-quote-icon">💙</div>
+        <h3 class="fam-name dancing">United by Love &amp; Smiles</h3>
+        <p class="fam-desc">We are the Parthiban Family — <strong>P. Prakash</strong>, <strong>P. Hemalatha</strong>, and our precious gift from God, <strong>P. Lashwin</strong>. Every day of his first year has filled our hearts with endless happiness and cherished memories.</p>
+        <div class="fam-members">
+          <!-- Appa with Prince beside -->
+          <div class="fm-card">
+            <div class="fm-icon-badge fm-father" title="Daddy with Prince">
+              <svg viewBox="0 0 48 48" fill="none">
+                <!-- Father silhouette -->
+                <circle cx="16" cy="13" r="5.2" fill="#ffffff"/>
+                <path d="M7 38v-7c0-4.4 3.6-8 8-8s8 3.6 8 8v7H7z" fill="#ffffff" opacity="0.95"/>
+                <!-- Father caring arm toward child -->
+                <path d="M21 27c3 2 6 3 9 1" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+                <!-- Baby Prince beside -->
+                <!-- Crown for Prince -->
+                <path d="M30 16l2.2 2.5 2.3-2.5 2.3 2.5 2.2-2.5-.8 3.5h-7.4z" fill="#fbbf24" stroke="#d97706" stroke-width="0.8"/>
+                <circle cx="34.5" cy="22.5" r="4.2" fill="#fde68a" stroke="#d97706" stroke-width="1"/>
+                <circle cx="34.5" cy="20" r="0.8" fill="#ef4444"/>
+                <!-- Prince body with royal attire -->
+                <path d="M27.5 38v-5c0-3.5 3.2-6.5 7-6.5s7 3 7 6.5v5h-14z" fill="#f5d060"/>
+                <path d="M33 29.5l3 1.5-3 1.5v-3z M36 29.5l-3 1.5 3 1.5v-3z" fill="#2563eb"/>
+              </svg>
+            </div>
+            <div class="fm-name">P. Prakash</div>
+            <div class="fm-role">Appa with Prince</div>
+          </div>
+          <!-- Prince Lashwin -->
+          <div class="fm-card fm-center">
+            <div class="fm-icon-badge fm-prince" title="Baby Prince Lashwin">
+              <svg viewBox="0 0 48 48" fill="none">
+                <!-- Golden halo aura -->
+                <circle cx="24" cy="26" r="14" fill="rgba(245,208,96,0.2)"/>
+                <!-- Baby face -->
+                <circle cx="24" cy="26.5" r="11" fill="#fde68a" stroke="#d4a017" stroke-width="1.5"/>
+                <!-- Cute sparkling eyes -->
+                <circle cx="20" cy="25.5" r="1.6" fill="#1e293b"/>
+                <circle cx="28" cy="25.5" r="1.6" fill="#1e293b"/>
+                <circle cx="20.5" cy="24.8" r="0.6" fill="#ffffff"/>
+                <circle cx="28.5" cy="24.8" r="0.6" fill="#ffffff"/>
+                <!-- Sweet prince smile -->
+                <path d="M21 29.5c1.2 1.8 4.8 1.8 6 0" stroke="#b45309" stroke-width="1.8" stroke-linecap="round"/>
+                <!-- Forehead auspicious tilak -->
+                <circle cx="24" cy="19.5" r="1.3" fill="#dc2626"/>
+                <!-- Cheerful cheeks -->
+                <ellipse cx="17.5" cy="28.5" rx="2" ry="1.2" fill="#f87171" opacity="0.65"/>
+                <ellipse cx="30.5" cy="28.5" rx="2" ry="1.2" fill="#f87171" opacity="0.65"/>
+                <!-- Imperial Prince Crown -->
+                <path d="M15 15.5l3.5 3.5 5.5-6.5 5.5 6.5 3.5-3.5-2 8H17z" fill="#fbbf24" stroke="#d4a017" stroke-width="1.2"/>
+                <circle cx="15" cy="15.5" r="1.5" fill="#3b82f6"/>
+                <circle cx="24" cy="12" r="1.8" fill="#ef4444"/>
+                <circle cx="33" cy="15.5" r="1.5" fill="#3b82f6"/>
+                <circle cx="24" cy="20" r="1.2" fill="#fbbf24"/>
+              </svg>
+            </div>
+            <div class="fm-name">P. Lashwin</div>
+            <div class="fm-role">Birthday Prince</div>
+          </div>
+          <!-- Amma with Prince cradled -->
+          <div class="fm-card">
+            <div class="fm-icon-badge fm-mother" title="Mom with Prince">
+              <svg viewBox="0 0 48 48" fill="none">
+                <!-- Mother face -->
+                <circle cx="17" cy="13" r="5" fill="#fce7f3" stroke="#db2777" stroke-width="1"/>
+                <!-- Mother hair/saree draped over shoulder -->
+                <path d="M13 13c0-3 2-6 5-6s5 3 5 6c0 1.5-.5 3-1.5 4-1 2-2 4-2 7" stroke="#db2777" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                <!-- Mother body -->
+                <path d="M9 38v-8c0-4.4 3.6-8 8-8 1.8 0 3.4.6 4.8 1.6" stroke="#db2777" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M9 38v-8c0-4.4 3.6-8 8-8s8 3.6 8 8v8H9z" fill="#f472b6" opacity="0.85"/>
+                <!-- Mother arms lovingly cradling prince -->
+                <path d="M16 28c3 4 8 4 12 0" stroke="#fbcfe8" stroke-width="3" stroke-linecap="round"/>
+                <!-- Baby prince in mother's embrace -->
+                <!-- Crown for prince -->
+                <path d="M28 17l1.8 2 2-2 2 2 1.8-2-.7 3h-6.2z" fill="#fbbf24" stroke="#d97706" stroke-width="0.6"/>
+                <circle cx="31.5" cy="23" r="4" fill="#fde68a" stroke="#d97706" stroke-width="1"/>
+                <circle cx="31.5" cy="20.5" r="0.8" fill="#ef4444"/>
+                <!-- Prince body cradled -->
+                <path d="M25 38c0-3.5 2.5-6.5 6.5-6.5s6.5 3 6.5 6.5v0H25z" fill="#f5d060"/>
+                <!-- Loving heart -->
+                <path d="M24 8.5c-.8-1-2.2-1-3 0-.8 1 0 2.2 1.5 3 1.5-.8 2.3-2 1.5-3z" fill="#ec4899"/>
+              </svg>
+            </div>
+            <div class="fm-name">P. Hemalatha</div>
+            <div class="fm-role">Amma with Prince</div>
+          </div>
+        </div>
+        <div class="fam-blessing">
+          <span>🙏</span>
+          "May our little prince Lashwin grow up healthy, wise, joyous, and forever blessed with divine grace."
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       WISHES / WHATSAPP CONTACT
+  ══════════════════════════════════ -->
+  <section id="wishes" class="wishes-sec">
+    <div class="sec-head rev-blk" data-reveal="down">
+      <div class="sec-label">💝 Birthday Wishes</div>
+      <h2 class="sec-title dancing">Send Your Love</h2>
+      <p class="sec-sub">Send your warm birthday wishes directly to parents on WhatsApp!</p>
+    </div>
+    <div class="wishes-layout">
+      <div class="wish-form-wrap rev-blk" data-reveal="left">
+        <div class="wfw-head">
+          <div class="wfw-icon">🎁</div>
+          <h3 class="dancing">Write a Birthday Wish</h3>
+          <p class="wfw-sub">Direct WhatsApp message to <strong>+91 9080615583</strong></p>
+        </div>
+        <form id="wishForm">
+          <div class="wf-g">
+            <label><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg> Your Name</label>
+            <input id="wfN" type="text" placeholder="Enter your name…" required/>
+          </div>
+          <div class="wf-g">
+            <label><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg> Your Birthday Wish</label>
+            <textarea id="wfM" rows="4" placeholder="Write your heartfelt blessing for Lashwin…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-whatsapp btn-full" id="btnWish">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+            Send Wish via WhatsApp 🎉
+          </button>
+        </form>
+        <div class="wish-ok" id="wishOk">
+          <div>💬</div>
+          <h3 class="dancing">Thank You!</h3>
+          <p>Your wish has been saved &amp; opened in WhatsApp to Prakash &amp; Hemalatha (+91 9080615583)! 💙</p>
+          <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:10px;">
+            <a id="btnReopenWa" href="#" target="_blank" class="btn btn-whatsapp">Open in WhatsApp Again</a>
+            <button class="btn btn-glass" onclick="resetWish()">Send Another</button>
+          </div>
+        </div>
+      </div>
+      <!-- ══════════════════════════════════
+           VENUE, GOOGLE MAP & BANNER
+      ══════════════════════════════════ -->
+      <div class="venue-location-card rev-blk" data-reveal="right">
+        <div class="vlc-header">
+          <div class="vlc-icon">📍</div>
+          <div>
+            <h3 class="dancing vlc-title">Function Venue &amp; Location</h3>
+            <p class="vlc-sub">Join us to celebrate P. Lashwin's 1st Birthday!</p>
+          </div>
+        </div>
+
+        <!-- Banner preview card with click to open lightbox -->
+        <div class="vlc-banner-wrap" onclick="openLightbox('images/banner_invite.jpg','Official Birthday Invitation - P. Lashwin')">
+          <img src="images/banner_invite.jpg" alt="P. Lashwin 1st Birthday Invitation Banner" class="vlc-banner-thumb"/>
+          <div class="vlc-banner-overlay">
+            <span class="vlc-zoom-btn">🔍 View Invitation Banner</span>
+          </div>
+        </div>
+
+        <!-- Event key details -->
+        <div class="vlc-details">
+          <div class="vlc-item">
+            <span class="vlc-item-ico">📅</span>
+            <div>
+              <span class="vlc-item-lbl">Date &amp; Auspicious Day</span>
+              <p class="vlc-item-val">Wednesday, 02 December 2026</p>
+            </div>
+          </div>
+          <div class="vlc-item">
+            <span class="vlc-item-ico">👑</span>
+            <div>
+              <span class="vlc-item-lbl">Birthday Celebrant &amp; Parents</span>
+              <p class="vlc-item-val"><strong>P. Lashwin</strong> · P. Prakash &amp; P. Hemalatha (Parthiban Families)</p>
+            </div>
+          </div>
+          <div class="vlc-item">
+            <span class="vlc-item-ico">📍</span>
+            <div>
+              <span class="vlc-item-lbl">Celebration Venue &amp; Full Address</span>
+              <p class="vlc-item-val">
+                <strong>4, Pillaiyar Koil Street, Chinna Sengundram, Sengundram, SP Koil - 603204</strong><br/>
+                <a href="https://maps.app.goo.gl/zotAdqTmFEQFh59Q7" target="_blank" rel="noopener noreferrer" class="vlc-phone-link" style="display:inline-flex;align-items:center;gap:4px;margin-top:5px;">
+                  📍 Open Exact Location in Google Maps
+                </a>
+              </p>
+            </div>
+          </div>
+          <div class="vlc-item">
+            <span class="vlc-item-ico">📞</span>
+            <div>
+              <span class="vlc-item-lbl">Contact &amp; WhatsApp</span>
+              <p class="vlc-item-val"><a href="https://api.whatsapp.com/send?phone=919080615583&text=Hi%20Prakash%2C%20regarding%20Lashwin%27s%201st%20Birthday%20Celebration!" target="_blank" class="vlc-phone-link">📱 +91 9080615583</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Embedded Google Map -->
+        <div class="vlc-map-wrap">
+          <iframe
+            src="https://maps.google.com/maps?q=4,+Pillaiyar+Koil+Street,+Chinna+Sengundram,+SP+Koil+603204&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+            width="100%"
+            height="180"
+            style="border:0;border-radius:12px;display:block;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Birthday Venue Map">
+          </iframe>
+          <a href="https://maps.app.goo.gl/zotAdqTmFEQFh59Q7" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-full btn-map-nav">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;margin-right:6px;"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+            Open Location in Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       FOOTER
+  ══════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-bg-deco" id="footerDeco"></div>
+    <div class="footer-inner">
+      <div class="ft-crown">👑</div>
+      <h2 class="dancing ft-name">P. Lashwin</h2>
+      <p class="ft-tag">Turning 1 on 02 December 2026</p>
+      <div class="ft-line"></div>
+      <div class="ft-emojis">🎂 🎉 🎈 👑 🌟 💙 🎀 ✨</div>
+      <p class="ft-love">Inviting with ❤️ by <strong>Parthiban Families</strong></p>
+      <div class="ft-actions">
+        <button class="btn btn-glass" onclick="shareIt()">
+          <svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+          Share Invite
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
